@@ -1,5 +1,4 @@
 const url = "https://imiki.pl/projekt/md13";
-const plujka = document.getElementById("wyp");
 var aktualnieWidocznyFormularz = null;
 
 var aktualnieWidocznyFormularz = null;
@@ -41,13 +40,11 @@ function wyslij(imie, nazwisko, klasa) {
     xhr.open("POST", "https://imiki.pl/projekt/md13/users");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-    // Utwórz dane POST
+    
     const dane = `imie=${imie}&nazwisko=${nazwisko}&klasa=${klasa}`;
 
-    // Wyślij dane
+    
     xhr.send(dane);
-
-    // Przechwyć odpowiedź
     xhr.onload = function () {
         if (xhr.status === 200) {
             pokazKomunikat("Dane zostały pomyślnie wysłane.");
